@@ -32,7 +32,8 @@ module.exports = class WindowIcons extends React.PureComponent {
           DiscordNative.window.restore();
         } else {
           DiscordNative.window.maximize();
-        }
+        };
+        this.setState({ isMaximized: !this.state.isMaximized });
       },
       icon: () => React.createElement(this.state.isMaximized ? Minimize : Maximize, {
         className: this.classes.icon
